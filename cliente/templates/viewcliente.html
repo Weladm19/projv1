@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<table class="table container">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">NOME</th>
+        <th scope="col">AÇOGUE</th>
+        <th scope="col">CPF ou CNPJ</th>
+        <th scope="col">ENDEREÇO</th>
+        <th scope="col">EMAIL</th>
+        <th scope="col">NIVEL</th>
+        <th scope="col">TELEFONE</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for cliente in clientes %}
+        <tr>
+            <td>{{cliente.id}}</td>
+            <td>{{cliente.nome}}</td>
+            <td>{{cliente.acogue}}</td>
+            <td>{{cliente.cpf_cpnj}}</td>
+            <td>{{cliente.endereco}}</td>
+            <td>{{cliente.email}}</td>
+            <td>{{cliente.nivel}}</td>
+            <td>{{cliente.telefone}}</td>
+
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

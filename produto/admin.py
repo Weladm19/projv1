@@ -13,3 +13,4 @@ class AdmProduto(admin.ModelAdmin):
 @admin.register(Tipo)
 class AdmTipo(admin.ModelAdmin):
     list_display = ["tipo"]
+    

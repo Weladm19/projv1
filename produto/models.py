@@ -23,8 +23,3 @@ class Produto(models.Model):
     
     
     
-class InFlow(models.Model):
-    ...
-    
-class OutFlow(models.Model):
-    ...

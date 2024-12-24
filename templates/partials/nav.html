@@ -27,7 +27,7 @@
           </a>
 
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Cadastro de Produto</a></li>
+            <li><a class="dropdown-item" href="{% url 'cad_prod' %}">Cadastro de Produto</a></li>
             <li><a class="dropdown-item" href="{% url 'view_prod' %}">Estoque</a></li>
           </ul>
         </li>
@@ -53,8 +53,8 @@
             Estoque
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Entrada</a></li>
-            <li><a class="dropdown-item" href="{% url 'saida' %}">Saida</a></li>
+            <li><a class="dropdown-item" href="{% url 'entrada' %}">Entrada</a></li>
+            <li><a class="dropdown-item" href="{% url "saida" %}">Saida</a></li>
           </ul>
         </li>
 

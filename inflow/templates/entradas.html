@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="mb-4">Produtos adcionados</h1>
+    {% for inflow in inflows %}
+    <div class="border m-2 p-2 rounded">
+        <p>Produto: {{ inflow.produto }}</p>
+        <p>Quantidade: {{ inflow.quantidade }}</p>
+        <p>Data de Entrada: {{ inflow.data_lancamento }}</p>
+    </div>
+    {% endfor %}
+{% endblock %}

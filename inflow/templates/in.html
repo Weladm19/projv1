@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="d-flex flex-column container">
+    <form action="." method="post" class="mb-3"> 
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Entrada de estoque" class="btn btn-primary">
+        <a href="{% url "inflow_view" %}" class="btn btn-info">Visualizar Entradas</a>
+    </form>
+</div>
+{% endblock %}

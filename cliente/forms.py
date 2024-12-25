@@ -16,6 +16,12 @@ class FormCliente(forms.ModelForm):
             "nivel" : forms.Select({'class':'form-control'}),
             "telefone" : forms.TextInput({'class':'form-control'})
         }
-        # label = {
-            
-        # }
+        labels = {
+                "nome" :"Nome",
+                "acogue" :"Açogue",
+                "cpf_cpnj" :"CPF ou CNPJ",
+                "endereco" : "Endereço",
+                "email" :"Email",
+                "nivel" :"Status de pagador",
+                "telefone" :"Telefone",
+        }

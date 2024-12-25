@@ -1,5 +1,5 @@
 from django.shortcuts import redirect
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, DetailView, ListView
 
 from .forms import FormProduto
 from .models import Produto
@@ -34,3 +34,8 @@ class CreateProdutoView(CreateView):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Cadastro De Produto '
         return context
+    
+    
+class DetailProdutoView(DetailView):
+    model = Produto
+    template_name = 'detalhe-produto.html'

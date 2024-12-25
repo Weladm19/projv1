@@ -17,6 +17,5 @@ class Produto(models.Model):
     preco_venda = models.DecimalField(decimal_places=2 , max_digits=8)
     quantidade = models.IntegerField()
     
-    
     def __str__(self):
         return f"{self.produto}"

@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'produto',
     'inflow',
     'outflow',
+    'vendedor',
+    'area_vendas',
+    
 ]
 
 MIDDLEWARE = [

@@ -1,22 +1,25 @@
 {% extends "base.html" %}
 
 {% block content %}
-   <section class="d-flex justify-content-around flex-wrap dash">
-    <div class="card text-bg-success mb-3 p-2" style="width: 18rem;">
-        <p>Quantidade Produto</p>
-        220
+    <div class="container">
+        <h1>Metricas Totais</h1>
+        <section class="d-flex justify-content-around flex-wrap dash">
+            <div class="card text-bg-success mb-3 p-2" style="width: 18rem;">
+                <p>Quantidade Produto</p>
+                220
+            </div>
+            <div class="card text-bg-warning mb-3 p-2" style="width: 18rem;">
+                <p>Custo De Estoque</p>
+                R$ 30201
+            </div>
+            <div class="card text-bg-danger mb-3 p-2" style="width: 18rem;">
+                <p>Valor Bruto</p>
+                R$ 3502310
+            </div>
+            <div class="card text-bg-info mb-3 p-2" style="width: 18rem;">
+                <p>Valor Liquido</p>
+                R$ 230210
+            </div>
+        </section>
     </div>
-    <div class="card text-bg-warning mb-3 p-2" style="width: 18rem;">
-        <p>Custo De Estoque</p>
-        R$ 30201
-    </div>
-    <div class="card text-bg-danger mb-3 p-2" style="width: 18rem;">
-        <p>Valor Bruto</p>
-        R$ 3502310
-    </div>
-    <div class="card text-bg-info mb-3 p-2" style="width: 18rem;">
-        <p>Valor Liquido</p>
-        R$ 230210
-    </div>
-   </section>
 {% endblock %}

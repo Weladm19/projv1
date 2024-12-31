@@ -41,11 +41,15 @@ INSTALLED_APPS = [
     'cliente',
     'produto',
     'inflow',
-    'outflow',
-    'vendedor',
-    'area_vendas',
-    
+    'outflow', 
+    'carregamento',
+    'carroestoque',   
 ]
+
+LOGIN_URL = '/'
+LOGIN_REDIRECT_URL = 'dash/'
+
+LOGOUT_REDIRECT_URL = '/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

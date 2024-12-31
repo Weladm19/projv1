@@ -1,5 +1,11 @@
-from django.shortcuts import redirect
-from django.views.generic import TemplateView
+from django.shortcuts import render
 
-class ViewHome(TemplateView):
-    template_name = 'index.html'
+from .metrica import get_metricas
+
+
+def home(request):
+    context = {
+        'metricas' : get_metricas(),
+        'title' : 'Home'
+    }
+    return render(request, 'index.html' , context)

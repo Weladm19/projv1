@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="d-flex container justify-content-around align-items-center h-100 flex-wrap">
+    <div class=" flex-column justify-content-around p-3 h-75 w-30 align-items-center">
+      <h2>Carregar Carro</h2>
+      <div class="m-5 p-2 ">
+          <a href="{% url 'carro_filipe' %}" class="text-black bg-primary p-2 link-underline-dark rounded">Carregar Filipe</a>
+      </div>
+      <div class=" m-5 p-2 ">
+          <a href="{% url 'carro_toninho' %}" class="text-black bg-primary p-2 link-underline-dark rounded">Carregar Toninho</a>
+      </div>
+    </div>
+
+    <div class=" flex-column justify-content-around p-3 h-75 w-30 align-items-center">
+      <h2>Consultar Carro</h2>
+      <div class="m-5 p-2 ">
+          <a href="{% url 'estoque_filipe' %}" class="text-black bg-primary p-2 link-underline-dark rounded">Consultar Filipe</a>
+      </div>
+      <div class=" m-5 p-2 ">
+          <a href="{% url 'estoque_toninho' %}" class="text-black bg-primary p-2 link-underline-dark rounded">Consultar Toninho</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

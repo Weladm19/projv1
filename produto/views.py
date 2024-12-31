@@ -1,5 +1,7 @@
 from django.shortcuts import redirect
-from django.views.generic import CreateView, DetailView, ListView
+from django.urls import reverse_lazy
+from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
+                                  UpdateView)
 
 from .forms import FormProduto
 from .models import Produto
@@ -21,7 +23,7 @@ class ViewProduto(ListView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Lista De Produto'
+        context['title'] = 'lista de produto'
         return context
     
 class CreateProdutoView(CreateView):
@@ -32,10 +34,30 @@ class CreateProdutoView(CreateView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Cadastro De Produto '
+        context['title'] = 'cadastro de produto '
         return context
     
     
 class DetailProdutoView(DetailView):
     model = Produto
     template_name = 'detalhe-produto.html'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'detalhe'
+        return context
+    
+    
+class UpdateProdutoView(UpdateView):
+    model = Produto
+    form_class = FormProduto
+    template_name = 'update-produto.html'
+    success_url = reverse_lazy('view_prod')
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'update'
+        return context
+
+class ApagarProdutoView(DeleteView):
+    ...

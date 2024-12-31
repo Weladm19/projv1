@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  <h2 class="mb-5">Carregamento do carro</h2>
+  <form action="." method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Carregar" class="btn btn-info mt-3">
+    <a href="{% url 'carro' %}" class="btn btn-warning mt-3">Voltar</a>
+  </form>
+</div>
+{% endblock %}

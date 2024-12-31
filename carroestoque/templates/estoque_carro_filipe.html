@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<a href="{% url 'carro' %}" class="btn btn-warning">voltar</a>
+  <div class="container">
+    <div>
+      <form class="d-flex mb-5" role="search">
+        <input class="form-control me-2" type="search" placeholder="Nome do Produto" aria-label="Search" name="carro_filipe">
+        <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+      </form>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">PRODUTO</th>
+          <th scope="col">QUANTIDADE</th>
+          <th scope="col">VALOR</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for filipe in car_filipe %}  
+          <tr>
+            <th scope="row">{{filipe.id}}</th>
+            <td>{{filipe.produto}}</td>
+            <td>{{filipe.quantidade}}</td>
+            <td>R$ {{filipe.valor}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

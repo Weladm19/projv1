@@ -16,7 +16,7 @@ class FormInFlowView(CreateView):
 
     def get_context_data(self, **kwargs):
             context = super().get_context_data(**kwargs)
-            context['title'] = 'Entrada em estoque'
+            context['title'] = 'entrada em estoque'
             return context
         
         
@@ -24,3 +24,9 @@ class InflowView(ListView):
     queryset = InFlow.objects.all()
     template_name = 'entradas.html'
     context_object_name = 'inflows'
+    
+    def get_context_data(self, **kwargs):
+            context = super().get_context_data(**kwargs)
+            context['title'] = 'entrada'
+            return context
+        

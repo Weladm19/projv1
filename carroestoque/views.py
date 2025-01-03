@@ -1,5 +1,7 @@
 from django.views.generic import CreateView, ListView
 
+from carroestoque.metrica import get_metricas_filipe, get_metricas_toninho
+
 from .forms import FilipeForm, ToninhoForm
 from .models import EstoqueCarroFilipe, EstoqueCarroToninho
 
@@ -35,6 +37,8 @@ class EstoqueCarroFilipeView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'estoque filipe'
+        context['custo'] = get_metricas_filipe()
+        
         return context
 
 
@@ -53,4 +57,5 @@ class EstoqueCarroToninhoView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'estoque toninho'
+        context['custo'] = get_metricas_toninho()
         return context

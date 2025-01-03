@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container border rounded">
+<div class="container border rounded mt-5 p-5">
     <h3 class="mb-5">Detalhe do produto</h3>
     <p>Nome Do Produto : {{ object.produto }}</p>
     <p>Tipo de Produto : {{ object.tipo }}</p>
@@ -9,5 +9,6 @@
     <p>Custo de compra do produto : {{ object.custo }}</p>
     <p>Preço de venda do produto : {{ object.preco_venda }}</p>
     <p>quantidade comprada : {{ object.quantidade }}</p>
+    <a href="{% url 'view_prod' %}" class="btn btn-danger">voltar</a>
 </div>
 {% endblock %}

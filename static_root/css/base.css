@@ -1,0 +1,26 @@
+.box-icon-link{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+header{
+    height:15vh;
+    position: relative;
+    top: 0;
+}
+
+main{
+    position: relative;
+    top: 90px;
+    height:80vh;
+}
+
+
+@media (max-width:1000px){
+    .box-icon-link{
+        display:flex;
+        align-items: center;
+        justify-content: space-around;
+    }   
+}

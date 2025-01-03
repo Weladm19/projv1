@@ -30,7 +30,7 @@ class CreateProdutoView(CreateView):
     model = Produto
     template_name = 'form-produto.html'
     form_class = FormProduto
-    success_url = "/produto/"
+    success_url = "/cadastro_de_produto/"
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

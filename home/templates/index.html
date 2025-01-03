@@ -1,25 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="container">
-        <h1>Metricas Totais</h1>
-        <section class="d-flex justify-content-around flex-wrap dash">
-            <div class="card text-bg-success mb-3 p-2" style="width: 18rem;">
-                <p>Quantidade Produto</p>
-                {{ metricas.quantidade_total }}
-            </div>
-            <div class="card text-bg-warning mb-3 p-2" style="width: 18rem;">
-                <p>Custo De Estoque</p>
-                R${{ metricas.custo_de_estoque }}
-            </div>
-            <div class="card text-bg-danger mb-3 p-2" style="width: 18rem;">
-                <p>Valor Bruto</p>
-                R${{ metricas.valor_bruto }}
-            </div>
-            <div class="card text-bg-info mb-3 p-2" style="width: 18rem;">
-                <p>Valor Liquido</p>
-                R${{ metricas.valor_liquido }}
-            </div>
-        </section>
-    </div>
+    {% if user.is_superuser %}
+        {% include "partials/_metrica_home.html" %}
+    {% elif user.username == 'filipe' %}
+        <div class="container">
+            <h2>Bem vindo {{ user.username }}</h2>
+        </div>
+    {% elif user.username == 'toninho' %}
+        <div class="container">
+            <h2>Bem vindo {{ user.username }}</h2>
+        </div>
+    {% endif %}
 {% endblock %}

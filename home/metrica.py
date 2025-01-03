@@ -10,7 +10,6 @@ def get_metricas():
     valor_liquido = valor_bruto - custo_de_estoque 
     quantidade_total = sum(produto.quantidade for produto in produto_total)
     lucro = (float(valor_liquido) * 0.30)
-    print(lucro)
     
     return dict(
         custo_de_estoque = number_format(custo_de_estoque, decimal_pos=2, force_grouping=True),

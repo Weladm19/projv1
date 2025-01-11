@@ -43,8 +43,7 @@ INSTALLED_APPS = [
     'inflow',
     'outflow', 
     'carregamento',
-    'carroestoque', 
-    'vendedor'  
+    'carroestoque',  
 ]
 
 LOGIN_URL = '/'

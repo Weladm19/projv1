@@ -23,3 +23,15 @@ main{
         justify-content: space-around;
     }   
 }
+
+@media print {
+    header{
+        display: none;
+    }
+    body form{
+        display: none;
+    }
+    @page{
+        size: landscape;
+    }
+}

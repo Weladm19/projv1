@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container box_vendas">
+    <form action="." method="post" class=" mt-4 mb-3">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Enviar" class="btn btn-primary">
+    </form>
+    <div class="mb-3 w-100 table-filipe">
+        <table class="table">
+            <thead class="table-light">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">produto</th>
+                    <th scope="col">valor</th>
+                    <th scope="col">quantidade</th>
+                    <th scope="col">pagamento</th>
+                    <th scope="col">Total por item</th>
+                  </tr>
+            </thead>
+            <tbody>
+                {% for venFilipe in  filipe_model%}
+                <tr>
+                    <th scope="row"></th>
+                    <td>{{ venFilipe.produto }}</td>
+                    <td>R${{ venFilipe.valor }}</td>
+                    <td>{{ venFilipe.quantidade }}</td>
+                    <td>{{ venFilipe.pagamento }}</td>
+                    <td>R${{ venFilipe.total }}</td>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5" class="text-center">Total</td>
+                    <td>R${{filipe_model.totalDeTudo}}</td>
+                </tr>
+            </tfoot>
+          </table>
+    </div>
+</div>
+{% endblock %}

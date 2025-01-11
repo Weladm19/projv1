@@ -16,13 +16,17 @@ main{
     height:80vh;
 }
 
+
+
 @media (max-width:1000px){
     .box-icon-link{
         display:flex;
         align-items: center;
         justify-content: space-around;
     }   
+
 }
+
 
 @media print {
     header{

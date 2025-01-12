@@ -13,5 +13,5 @@ urlpatterns = [
     path('', include('outflow.urls')),
     path('', include('carregamento.urls')),
     path('', include('carroestoque.urls')),
-    path('', include('vendedor.urls')),
+    path('', include('area_vendedores.urls')),
 ]

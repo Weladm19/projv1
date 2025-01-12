@@ -2,10 +2,12 @@
 
 {% block content %}
 {% if user.is_superuser %}
+<div class="container mb-2">
   <a href="{% url 'carro' %}" class="btn btn-warning">voltar</a>
+</div>
 {% endif %}
 <div class="container">
-  <div>
+  <div class="border">
     <form class="d-flex mb-5" role="search" method="get">
       <input class="form-control me-2" type="search" placeholder="Nome do Produto" aria-label="Search" name="carro_toninho">
       <button class="btn btn-outline-success" type="submit">Pesquisar</button>

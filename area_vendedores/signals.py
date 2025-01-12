@@ -9,7 +9,3 @@ def pre_save_ven_filipe(sender, instance, **kwargs):
    produto = instance.produto
    instance.valor = produto.preco_venda
    
-@receiver(post_save, sender=VenFilipe)
-def post_save_ven_filipe(sender, instance, created, **kwargs):
-    if created:
-        print('Welton')

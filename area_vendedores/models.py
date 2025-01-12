@@ -45,17 +45,10 @@ class VenFilipe(models.Model):
     def total(self):
         tt = self.valor * self.quantidade
         return tt
-    
-    
-    @property
-    def totalDeTudo(self):
-        ver = list(self.tt)
-        print(ver)
    
     
     def __str__(self):
-        return f'{self.produto} - {self.cliente} - {self.quantidade} - {self.valor} - {self.pagamento} - {self.obs}'
-    
+        return f'{self.produto} - {self.cliente} - {self.quantidade} - {self.valor} - {self.pagamento} - {self.obs} - {self.total}'
     
     
 class VenToninho(models.Model):

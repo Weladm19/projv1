@@ -7,7 +7,7 @@
         {{ form.as_p }}
         <input type="submit" value="Enviar" class="btn btn-primary">
     </form>
-    <div class="mb-3 w-100 table-filipe">
+    <div class="mb-3 w-100 table-filipe border p-2">
         <table class="table">
             <thead class="table-light">
                 <tr>
@@ -33,7 +33,7 @@
             <tfoot>
                 <tr>
                     <td colspan="5" class="text-center">Total</td>
-                    <td>R${{filipe_model.totalDeTudo}}</td>
+                    <td>R${{valorfinal.valorTotal}}</td>
                 </tr>
             </tfoot>
           </table>

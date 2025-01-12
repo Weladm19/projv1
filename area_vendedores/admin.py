@@ -5,7 +5,7 @@ from .models import VenFilipe, VenLoja, VenToninho
 
 @admin.register(VenFilipe)
 class AdminFilipe(admin.ModelAdmin):
-    list_display = ['produto','valor','cliente','quantidade','pagamento','obs' ]   
+    list_display = ['produto','valor','cliente','quantidade','pagamento','obs','total' ]   
     search_fields = ('produto',)
     list_filter = ('produto',)
 

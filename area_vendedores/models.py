@@ -16,11 +16,15 @@ MODELO_PAGAMENTO = {
 class VenLoja(models.Model):
     # vendedor
     produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
-    valor = models.DecimalField(max_digits=7, decimal_places=2, default=0.00) 
+    valor = models.DecimalField(max_digits=7, decimal_places=2, default=0.00, blank=True, null=True) 
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE,blank=True , null=True)
     quantidade = models.IntegerField()
     pagamento = models.CharField(max_length=50 ,choices=MODELO_PAGAMENTO )
     obs = models.TextField()
+    
+    class Meta:
+       ordering = ['-id']
+    
     
     @property
     def total(self):
@@ -29,7 +33,7 @@ class VenLoja(models.Model):
     
 
     def __str__(self):
-        return f'{self.produto} - {self.cliente} - {self.quantidade} - {self.valor} - {self.pagamento} - {self.obs}'
+        return f'{self.produto} - {self.cliente} - {self.quantidade} - {self.valor} - {self.pagamento} - {self.obs} - {self.total}'
 
 
 
@@ -40,6 +44,10 @@ class VenFilipe(models.Model):
     quantidade = models.IntegerField()
     pagamento = models.CharField(max_length=50 ,choices=MODELO_PAGAMENTO )
     obs = models.TextField()
+   
+    class Meta:
+       ordering = ['-id']
+    
     
     @property
     def total(self):
@@ -59,6 +67,9 @@ class VenToninho(models.Model):
     pagamento = models.CharField(max_length=50 ,choices=MODELO_PAGAMENTO )
     obs = models.TextField()
 
+    class Meta:
+        ordering = ['-id']
+        
 
     @property
     def total(self):
@@ -67,4 +78,4 @@ class VenToninho(models.Model):
     
     
     def __str__(self):
-        return f'{self.produto} - {self.cliente} - {self.quantidade} - {self.valor} - {self.pagamento} - {self.obs}'
+        return f'{self.produto} - {self.cliente} - {self.quantidade} - {self.valor} - {self.pagamento} - {self.obs} - {self.total}'

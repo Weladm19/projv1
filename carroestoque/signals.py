@@ -1,4 +1,4 @@
-from django.db.models.signals import post_save, pre_save
+from django.db.models.signals import post_delete, post_save, pre_save
 from django.dispatch import receiver
 
 from carroestoque.models import EstoqueCarroFilipe, EstoqueCarroToninho
@@ -33,3 +33,17 @@ def att_estoque_produto2(sender, instance , created , **kwargs):
             produto = instance.produto
             produto.quantidade -= instance.quantidade
             produto.save()
+            
+               
+@receiver(post_delete, sender=EstoqueCarroFilipe)
+def return_valor_filipe(sender , instance, **kwargs):
+   produto = instance.produto
+   produto.quantidade += instance.quantidade
+   produto.save()
+   
+
+@receiver(post_delete, sender=EstoqueCarroToninho)
+def return_valor_toninho(sender , instance, **kwargs):
+   produto = instance.produto
+   produto.quantidade += instance.quantidade
+   produto.save()

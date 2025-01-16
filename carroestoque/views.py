@@ -1,4 +1,5 @@
-from django.views.generic import CreateView, ListView
+from django.urls import reverse_lazy
+from django.views.generic import CreateView, DeleteView, ListView
 
 from carroestoque.metrica import get_metricas_filipe, get_metricas_toninho
 
@@ -36,7 +37,7 @@ class EstoqueCarroFilipeView(ListView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'estoque filipe'
+        context['title'] = 'Estoque filipe'
         context['custo'] = get_metricas_filipe()
         
         return context
@@ -56,6 +57,19 @@ class EstoqueCarroToninhoView(ListView):
         
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'estoque toninho'
+        context['title'] = 'Estoque toninho'
         context['custo'] = get_metricas_toninho()
         return context
+    
+
+class DeleteCarEstoqueFilipe(DeleteView):
+    model = EstoqueCarroFilipe
+    template_name = 'delete_estoque_carro_filipe.html'
+    success_url = reverse_lazy('estoque_filipe')
+    
+    
+class DeleteCarEstoqueToninho(DeleteView):
+    model = EstoqueCarroToninho
+    template_name = 'delete_estoque_carro_filipe.html'
+    success_url = reverse_lazy('estoque_toninho')
+    

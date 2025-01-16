@@ -1,6 +1,6 @@
 .venv
 .env
 venv
-*.sqlite3
+*db.sqlite3
 __pycache__/
 texto.txt

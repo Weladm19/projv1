@@ -1,5 +1,7 @@
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, DeleteView, UpdateView
+from django.views.generic import CreateView, DeleteView, UpdateView, ListView
+
+from carroestoque.models import EstoqueCarroFilipe
 
 from .forms import VenFilipeForm
 from .metrica import metrica_vendedor
@@ -16,9 +18,9 @@ class VenFilipeListView(CreateView):
         context = super().get_context_data(**kwargs)
         context['filipe_model'] = VenFilipe.objects.all()
         context['valorfinal'] = metrica_vendedor()
-        return context
+        return context   
     
-    
+        
 class VenFilipeUpdateView(UpdateView):
     model = VenFilipe
     template_name = 'update.html'
@@ -36,3 +38,13 @@ class VenFilipeDeleteView(DeleteView):
     model = VenFilipe
     template_name = 'delete.html'
     success_url = reverse_lazy('filipe_venda')
+    
+
+class VenFilipeEstoqueView(ListView):
+    model = EstoqueCarroFilipe
+    template_name = 'filipe_estoque.html'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['estoque_model'] = EstoqueCarroFilipe.objects.all()
+        return context

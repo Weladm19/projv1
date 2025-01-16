@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'carregamento',
     'carroestoque',  
     'area_vendedores',
+    'venda_finalizada',
 ]
 
 LOGIN_URL = '/'

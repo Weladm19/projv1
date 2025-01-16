@@ -10,6 +10,9 @@ class EstoqueCarroFilipe(models.Model):
     valor = models.DecimalField(max_digits=7 , decimal_places=2, blank=True, null=True ,default=0.00) 
     data_entrada = models.DateTimeField(auto_now_add=True)
     
+    class Meta:
+        ordering = ['-id']
+    
     @property
     def total_valor(self):
         total = self.quantidade * self.valor
@@ -25,6 +28,10 @@ class EstoqueCarroToninho(models.Model):
     quantidade = models.IntegerField(default=0)
     valor = models.DecimalField(max_digits=7 , decimal_places=2, blank=True, null=True ,default=0.00)
     data_entrada = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+        ordering = ['-id']
+    
     
     @property
     def total_valor(self):

@@ -10,7 +10,7 @@ class InFlow(models.Model):
     data_lancamento = models.DateTimeField(auto_now_add=True)
     
     class Meta:
-        ordering = ['-data_lancamento']
+        ordering = ['produto']
         
     def __str__(self):
         return self.produto.produto

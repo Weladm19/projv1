@@ -1,12 +1,11 @@
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, DeleteView, UpdateView, ListView
+from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 
-from carroestoque.models import EstoqueCarroFilipe
+from .forms import VenFilipeForm, VenToninhoForm
+from .metrica import metrica_vendedor, metrica_vendedor_toninho
+from .models import VenFilipe, VenToninho
 
-from .forms import VenFilipeForm
-from .metrica import metrica_vendedor
-from .models import VenFilipe
-
+# from carroestoque.models import EstoqueCarroFilipe, EstoqueCarroToninho
 
 class VenFilipeListView(CreateView):
     model = VenFilipe
@@ -39,12 +38,35 @@ class VenFilipeDeleteView(DeleteView):
     template_name = 'delete.html'
     success_url = reverse_lazy('filipe_venda')
     
-
-class VenFilipeEstoqueView(ListView):
-    model = EstoqueCarroFilipe
-    template_name = 'filipe_estoque.html'
+    
+# Toninho   
+class VenToninhoListView(CreateView):
+    model = VenToninho
+    template_name = 'toninho.html'
+    form_class = VenToninhoForm
+    success_url = reverse_lazy('toninho_venda')
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['estoque_model'] = EstoqueCarroFilipe.objects.all()
+        context['toninho_model'] = VenToninho.objects.all()
+        context['valorfinal'] = metrica_vendedor_toninho()
+        return context   
+    
+        
+class VenToninhoUpdateView(UpdateView):
+    model = VenToninho
+    template_name = 'update.html'
+    fields = ['valor']
+    success_url = reverse_lazy('toninho_venda')
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['toninho_model'] = VenToninho.objects.all()
+        context['title'] = 'Altera Valor'
         return context
+    
+    
+class VenToninhoDeleteView(DeleteView):
+    model = VenToninho
+    template_name = 'delete.html'
+    success_url = reverse_lazy('toninho_venda')

@@ -16,9 +16,9 @@
         {% if user.is_superuser %}
             {% include "partials/nav.html" %}
         {% elif not user.is_superuser %}
-            {% if user.username == 'filipe' %}
+            {% if user.username == 'Filipe' %}
                 {% include "partials/_nav_vendedor_filipe.html" %}
-            {% elif user.username == 'toninho' %}
+            {% elif user.username == 'Toninho' %}
                 {% include "partials/_nav_vendedor_toninho.html" %}
             {% endif %}
         {% endif %}

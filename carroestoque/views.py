@@ -14,12 +14,24 @@ class CarroFilipeFormView(CreateView):
     template_name= 'in-carro.html'
     success_url = '/carro_filipe/'
     
-
+    def get_context_data(self, **kwargs):
+        data = super().get_context_data(**kwargs)
+        data['title'] = 'CarregamentoFilipe'
+        data['name_car'] = 'Filipe' 
+        return data
+    
+    
 class CarroToninhoFormView(CreateView):
     model = EstoqueCarroToninho
     form_class = ToninhoForm
     template_name= 'in-carro.html'
     success_url = '/carro_toninho/'
+    
+    def get_context_data(self, **kwargs):
+        data = super().get_context_data(**kwargs)
+        data['title'] = 'CarregamentoToninho'
+        data['name_car'] = 'Toninho'
+        return data
     
     
 class EstoqueCarroFilipeView(ListView):
@@ -70,6 +82,6 @@ class DeleteCarEstoqueFilipe(DeleteView):
     
 class DeleteCarEstoqueToninho(DeleteView):
     model = EstoqueCarroToninho
-    template_name = 'delete_estoque_carro_filipe.html'
+    template_name = 'delete_estoque_carro_toninho.html'
     success_url = reverse_lazy('estoque_toninho')
     

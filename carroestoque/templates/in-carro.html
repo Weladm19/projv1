@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container">
-  <h2 class="mb-5">Carregamento do carro</h2>
+  <h2 class="mb-5">Carregamento do carro {{ name_car }}</h2>
   <form action="." method="post">
     {% csrf_token %}
     {{form.as_p}}

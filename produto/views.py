@@ -7,7 +7,6 @@ from .forms import FormProduto
 from .models import Produto
 
 
-# Create your views here.
 class ViewProduto(ListView):
     queryset = Produto.objects.all()
     template_name = 'produtos.html'
